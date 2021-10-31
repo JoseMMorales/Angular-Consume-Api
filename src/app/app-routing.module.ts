@@ -6,7 +6,7 @@ import { LoginComponent } from './views/login/login.component';
 import { NewComponent } from './views/new/new.component';
 
 const routes: Routes = [
-  {path: '', redirectTo: 'Login', pathMatch:'full'},
+  {path: '', redirectTo: 'login', pathMatch:'full'},
   {path:'login', component:LoginComponent},
   {path:'dashboard', component:DashboardComponent},
   {path:'edit', component:EditComponent},
