@@ -15,8 +15,8 @@ import { ResponseI } from '../../interfaces/response.interface';
 export class LoginComponent implements OnInit {
 
   loginForm = new FormGroup({
-    usuario : new FormControl('', Validators.required),
-    password : new FormControl('', Validators.required)
+    usuario: new FormControl('', Validators.required),
+    password: new FormControl('', Validators.required)
   })
 
   constructor(private api: ApiService, private router: Router) { }
@@ -25,6 +25,15 @@ export class LoginComponent implements OnInit {
   errorMessage: string = "";
 
   ngOnInit(): void {
+    this.checkLocalStorage();
+  }
+
+  get form() { return this.loginForm.controls; } // Get form for validations
+
+  checkLocalStorage() {
+    if (localStorage.getItem('token')) {
+      this.router.navigate(['dashboard']);
+    }
   }
 
   onLogin(form: LoginI) {

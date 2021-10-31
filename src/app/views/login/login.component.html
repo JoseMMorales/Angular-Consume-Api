@@ -8,25 +8,31 @@
 </div>
 
 <div class="wrapper fadeInDown">
-  <div id="formContent">
-    <!-- Tabs Titles -->
 
-    <!-- Icon -->
+  <!-- Login Icon -->
+  <div id="formContent">
     <div class="fadeIn first">
       <img src="assets/Login-image.png" id="icon" alt="User Icon" />
     </div>
 
     <!-- Login Form -->
+
     <form [formGroup]= "loginForm" (ngSubmit)="onLogin(loginForm.value)">
       <input type="text" id="login" class="fadeIn second" placeholder="User" formControlName="usuario">
+      <div class="alert alert-danger" *ngIf="form.usuario.invalid && form.usuario.touched">
+        <span>This field is required</span>
+      </div>
       <input type="password" id="password" class="fadeIn third" placeholder="password" formControlName="password">
-      <input type="submit" class="fadeIn fourth" value="Log In">
+      <div class="alert alert-danger" *ngIf="form.password.invalid && form.password.touched">
+        <span>This field is required</span>
+      </div>
+      <input type="submit" class="fadeIn fourth" value="Log In" [disabled]="loginForm.invalid" >
     </form>
 
-    <!-- Remind Passowrd -->
+    <!-- Login Error Messages -->
+
     <div class="alert alert-danger" *ngIf="errorStatus">
       <span>{{errorMessage}}</span>
     </div>
-
   </div>
 </div>
