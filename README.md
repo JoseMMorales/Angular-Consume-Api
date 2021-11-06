@@ -1,6 +1,7 @@
 # ConsumeAPI
 
 [Youtube Playlist of how to consume API with Angular](https://www.youtube.com/watch?v=ooAmdvpAE-o&list=PLIbWwxXce3VqQxabv3aT0nHnhHQH6F-qG)
+[Docs Patients API](https://api.solodata.es/);
 
 ## How to add Bootstrap in the project
 * Type in terminal command `npm install jquery bootstrap --save`
