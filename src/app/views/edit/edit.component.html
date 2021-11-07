@@ -1,5 +1,39 @@
 <app-header></app-header>
 <div class="container">
-    
-</div>
+    <br>
+    <form [formGroup]="editForm" (ngSubmit)="submitForm(editForm.value)">
+        <div class="form-group row">
+            <label for="NameInput">Name</label>
+            <input type="text" class="form-control" placeholder="Patient's Name" formControlName="nombre" id="NameInput">
+        </div>
+        <div class="form-group row">
+            <label for="AddressInput">Address</label>
+            <input type="text" class="form-control" placeholder="Patient's Address" formControlName="direccion" id="AddressInput">    
+        </div>
+        <br>
+        <div class="form-group row">
+            <div class="col">
+                <label for="EmailInput">Email</label>
+                <input type="text" class="form-control" placeholder="Patient's Nmail" formControlName="correo" id="EmailInput">
+                <label for="DniInput">DNI</label>
+                <input type="text" class="form-control" placeholder="Patient's Dni" formControlName="dni" id="DniInput">        
+            </div>
+            <div class="col">
+                <label for="PostalCodeInput">Postal Code</label>
+                <input type="text" class="form-control" placeholder="Patient's Postal Code" formControlName="codigoPostal" id="PostalCodeInput">
+                <label for="GenderInput">Gender</label>
+                <input type="text" class="form-control" placeholder="Patient's Gender" formControlName="genero" id="GenderInput">        
+            </div>
+            <div class="col">
+                <label for="PhoneInput">Phone</label>
+                <input type="tel" class="form-control" placeholder="Patient's Phone" formControlName="telefono" id="PhoneInput">
+                <label for="BirthDateInput">Birth Date</label>
+                <input type="text" class="form-control" placeholder="Patient's Date of Birth" formControlName="fechaNacimiento" id="BirthDateInput">        
+            </div>
+        </div>
+        <br>
+        <button type="submit" class="btn btn-primary">Save</button>
+        <button type="button" class="btn btn-danger" (click)="delete()">Delete</button>
+    </form>
+</div><br><br>
 <app-footer></app-footer>

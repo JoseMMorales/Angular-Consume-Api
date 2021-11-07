@@ -1,8 +1,9 @@
 export interface Patient {
+    [index: number]: Patient;
     PacienteId: string;
     DNI: string;
     Nombre: string;
-    Direccion: string;
+    Direccion?: string;
     CodigoPostal:string;
     Telefono: string;
     Genero: string;
