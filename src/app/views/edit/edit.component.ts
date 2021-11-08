@@ -87,4 +87,8 @@ export class EditComponent implements OnInit {
       }
     });
   }
+
+  goBack() {
+    this.router.navigate(['dashboard']);
+  }
 }

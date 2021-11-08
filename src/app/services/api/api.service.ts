@@ -5,6 +5,7 @@ import { PatientsList } from '../../interfaces/patientsList.interface';
 import { Patient } from '../../interfaces/patient.interface';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -13,12 +14,21 @@ export class ApiService {
 
   url: string = "https://api.solodata.es/";
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private router: Router) { }
 
   loginByEMail(form: LoginI): Observable<ResponseI> {
     let address = this.url + "auth";
 
     return this.http.post<ResponseI>(address, form);
+  }
+
+  logOut(){
+    this.clearCockies();
+    this.router.navigate(['/']);  
+  }
+
+  clearCockies(){
+    localStorage.removeItem('token');
   }
 
   getAllPatients(page:number): Observable<PatientsList[]> {
@@ -48,5 +58,11 @@ export class ApiService {
       body: form
     }
     return this.http.delete<ResponseI>(address, options);
+  }
+
+  postPatient(form: Patient): Observable<ResponseI> {
+    let address = this.url + "pacientes";
+
+    return this.http.post<ResponseI>(address, form);
   }
 }
