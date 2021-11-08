@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Patient } from '../../interfaces/patient.interface';
+import { ResponseI } from '../../interfaces/response.interface';
 import { ApiService } from '../../services/api/api.service';
+import { AlertService } from '../../services/alert/alert.service';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
@@ -29,7 +31,8 @@ export class EditComponent implements OnInit {
   constructor(
     private router: Router, 
     private activeRouter: ActivatedRoute,
-    private api: ApiService
+    private api: ApiService,
+    private alert: AlertService
   ) { }
 
   ngOnInit(): void {
@@ -59,9 +62,13 @@ export class EditComponent implements OnInit {
 
   submitForm(form: Patient){
     this.api.putPatient(form).subscribe(data=> {
-      console.log(data);
+      let response: ResponseI = data;
+
       if (data.status == 'ok') {
+        this.alert.showSuccess('Done', 'Details Updated');
         this.router.navigate(['dashboard']);
+      } else {
+        this.alert.showError('Failed', response.result.error_msg);
       }
     });
   }
@@ -70,10 +77,14 @@ export class EditComponent implements OnInit {
     let data: Patient = this.editForm.value;
 
     this.api.deletePatient(data).subscribe(data=> {
-       console.log(data);
-       if (data.status == 'ok') {
+      let response: ResponseI = data;
+      
+      if (data.status == 'ok') {
+        this.alert.showSuccess('Done', 'Patient Deleted');
         this.router.navigate(['dashboard']);
-       }
+      } else {
+        this.alert.showError('Failed', response.result.error_msg);
+      }
     });
   }
 }
