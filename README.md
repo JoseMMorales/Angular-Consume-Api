@@ -13,8 +13,8 @@ In order to be an adaptable App, we have used Bootstrap Framework implementing r
 ## How Observables and Subscribers have been used...
 
 <div align="center">
-    <img width="255" alt="Observable" src="https://user-images.githubusercontent.com/43299285/141693393-c9e4b5cb-4190-4ca8-a9e5-6dfb44f66c74.PNG">
-    <img width="355" alt="Subscribe" src="https://user-images.githubusercontent.com/43299285/141693550-288125e3-5058-46eb-943f-ac12e684fc20.PNG">
+    <img width="285" alt="Observable" src="https://user-images.githubusercontent.com/43299285/141693393-c9e4b5cb-4190-4ca8-a9e5-6dfb44f66c74.PNG">
+    <img width="365" alt="Subscribe" src="https://user-images.githubusercontent.com/43299285/141693550-288125e3-5058-46eb-943f-ac12e684fc20.PNG">
 </div>
 
 
