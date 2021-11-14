@@ -1,8 +1,8 @@
 # ConsumeAPI
 
-Training attended via YouTube channel to discover how to handling requests from API, using Http protocols to manage data in different ways, including [Observable](https://angular.io/guide/observables) design pattern as subject to pass the data and being [subscribed](https://rxjs.dev/guide/subscription) to deliver the data either to be modified or for publishing purposes.
+Training attended via YouTube channel to discover how to handle requests from API, using Http protocols to manage data in different ways, including [Observable](https://angular.io/guide/observables) design pattern as subject to pass the data and being [subscribed](https://rxjs.dev/guide/subscription) to deliver the data either to be modified or for publishing purposes.
 
-In order to be an adaptable App, we have used Bootstrap Framework implementing responsiveness in all screen sizes. And finally, [ngx-toastr](https://www.npmjs.com/package/ngx-toastr) to notify end user that actions in UI has been doen accordingly. 
+In order to be an adaptable App, we have used Bootstrap Framework implementing responsiveness in all screen sizes. And finally, [ngx-toastr](https://www.npmjs.com/package/ngx-toastr) to notify end user that actions in UI have been done accordingly. 
 
 ## Resources used... 
 
